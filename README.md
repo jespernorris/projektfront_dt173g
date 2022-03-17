@@ -1,4 +1,4 @@
-# Projekt DT173G
+# Projektfront DT173G
 Detta är frontdelen för mitt projekt i kursen Webbutveckling 3, denna är automatiserad genom GULP och konsumerar webbtjänsten som finns i repot projektrest_dt173g.
 Genom att automatisera denna del så utför datorn en del av arbetet som annars hade behövts läggas tid på under utvecklingen, som till exempel att komprimera bilder.
 
