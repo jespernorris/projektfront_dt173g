@@ -87,10 +87,10 @@ exports.default = series(
 ```
 
 ## För att använda detta repo skriver du följande i din terminal
-För att klona repo
+### För att klona repo
 1. `https://github.com/jespernorris/projektfront_dt173g.git`
-Installera paket från package.json
+### Installera paket från package.json
 2. `npm install`
-Starta den automatiserade processen
+### Starta den automatiserade processen
 3. `gulp`
 
