@@ -1,0 +1,302 @@
+// universal font
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+// body, innehåller lite generella delar av webbplatsen
+// meny, footer, banner samt dividers för innehåll
+body {
+    background-color: $lightGreyContent;
+    margin: 0px;
+
+    // meny
+    nav {
+        #menu {
+            padding: 1em;
+            text-align: center;
+            padding-bottom: 1.5em;
+
+            a {
+                font-size: 150%;
+                color: $black;
+                text-decoration: none;
+                border-bottom: $divider;
+                border-width: 10%;
+                margin-left: 1em;
+            }
+        }
+    }
+
+    // sidans "banner" under menyn
+    #banner {
+        text-align: center;
+        background-size:cover;
+        background-image: url(../images/background.jpg);
+        height: 450px;
+        border-bottom: $divider;
+        border-top: $divider;
+    }
+
+    // sidans footer
+    footer {
+        padding: 1em;
+        background-color: $lightGrey;
+        // för innehållet i footern
+        #footerContent {
+            display: flex;
+
+            #links, #contactFooter {
+                margin-left: 2em;
+
+                ul {
+                    padding-inline-start: 0px;
+
+                    li {
+                        list-style: none;
+                        
+                        a {
+                            color: $black;
+                        }
+                    }
+                }
+            }
+        }
+        // för texten som visar skapare
+        #websiteAuthor {
+            text-align: center;
+        }
+    }
+
+    // divider som skiljer visst innehåll från varandra
+    .divider {
+        border-bottom: $divider;
+    }
+}
+
+// div för sidans "innehåll"
+#contentBox {
+    max-width: 70%;
+    margin: 0 auto;
+
+    h2 {
+        text-align: center;
+    }
+
+    // div med innehåll "om mig" samt kontaktinfo
+    #topBox {
+        display: flex;
+        max-width: 70%;
+        margin: 0 auto;
+        padding-bottom: 1em;
+
+        // kontakt
+        #contact {
+            margin: 0 auto;
+            max-width: 50%;
+            ul {
+                padding-inline-start: 0px;
+
+                li {
+                    list-style: none;
+
+                    a {
+                        color: $black;
+                    }
+                }
+            }
+        }
+        // om mig
+        #about {
+            max-width: 50%;
+            margin: 0 auto;
+        }
+    }
+
+    // arbetserfarenhet/studier
+    #experiences {
+        display: flex;
+        padding-top: 1em;
+        padding-bottom: 2em;
+
+        #studies, #work {
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .studyexperience, .workexperience {
+            border-bottom: $divider;
+            width: 200px;
+            padding: 1em;
+        }
+    }
+
+    // kontaktformulär
+    #contact {
+        form {
+            text-align: center;
+            margin-bottom: 4em;
+
+            input[type=text] {
+                width: 40%;
+                height: 2em;
+                margin-bottom: 1.5em;
+                margin-top: 0.5em;
+            }
+
+            input[type=submit] {
+                width: 10%;
+                height: 3em;
+            }
+
+            textarea {
+                width: 40%;
+                height: 10em;
+                margin-bottom: 1em;
+            }
+        }
+    }
+
+    // grid för projekt, listar ut projekten med 2 platser i bredd
+    #gridProjects {
+        text-align: center;
+        max-width: 80%;
+        margin: 0 auto;
+        margin-top: 4em;
+        padding-bottom: 2em;
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 1fr; 
+        gap: 10px 10px; 
+        grid-template-areas: 
+          ". ."
+          ". ."; 
+        position: relative;
+
+        a {
+            color: $black;
+        }
+    }
+}
+
+/* burger-menu till små skärmar */
+.smallnav {
+    overflow: hidden;
+    display: none;
+
+    /* gömmer menyn tills burgaren klickas på */
+    #myLinks {
+        display: none;
+        a {
+            color: $black;
+            font-weight: bold;
+        }
+    }
+
+    a {
+        color: $black;
+        padding: 1em;
+        text-decoration: none;
+        display: block;
+        background: $lightGrey;
+        border: 1px solid $black;
+    }
+
+    a.icon {
+    
+        background: $lightGrey;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+// för skärmar mindre än 1500px
+@media screen and (max-width: 1500px) {
+    #contentBox {
+        max-width: 80%;
+    }
+
+    #banner {
+        max-height: 350px;
+    }
+}
+
+// för skärmar mindre än 1000px
+@media screen and (max-width: 1000px) {
+    // gömmer menyn för större skärmar och tar fram hamburgarmenyn
+    nav {
+        #menu {
+            display: none;
+        }
+
+        .smallnav {
+            display: initial;
+        }
+    }
+
+    #banner {
+        max-height: 250px;
+    }
+
+    #contentBox {
+        max-width: 100%;
+    }
+}
+
+// för skärmar mindre än 750px
+@media screen and (max-width: 750px) {
+    #banner {
+        max-height: 150px;
+    }
+
+    #contentBox {
+        #topBox {
+            flex-direction: column;
+            max-width: 70%;
+            #about {
+                max-width: 80%;
+
+                h3 {
+                    text-align: center;
+                }
+            }
+            #contact {
+                max-width: 80%;
+
+                h3 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+// för skärmar mindre än 500px
+@media screen and (max-width: 500px) {
+    #contentBox {
+        #topBox {
+            flex-direction: column;
+            max-width: 80%;
+
+            #about {
+                max-width: 90%;
+            }
+
+            #contact {
+                max-width: 90%;
+            }
+        }
+
+        #experiences {
+            flex-direction: column;
+        }
+
+        #contact {
+            form {
+                input[type=submit] {
+                    width: 15%;
+                    height: 3em;
+                }
+            }
+        }
+    }
+}

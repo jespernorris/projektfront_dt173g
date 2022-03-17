@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style/main.css">
+    <title>DT173G Projekt</title>
+</head>
+<body>
+    <!-- webbplatsens meny -->
+    <nav>
+        <div id="menu">
+            <a href="index.html">Hem</a>
+            <a href="projects.html">Projekt</a>
+            <a href="contact.html">Kontakta mig</a>
+        </div>
+        <!-- meny för små skärmar -->
+        <div class="smallnav">
+            <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()">
+                <i class="fa fa-bars" style="font-size:24px"></i>
+            </a>
+            <div id="myLinks">
+                <a href="index.html">Hem</a>
+                <a href="projects.html">Projekt</a>
+                <a href="contact.html">Kontakta mig</a>
+            </div>
+        </div>
+    </nav>
+    <!-- banner till webbplatsen via css -->
+    <div id="banner"></div>
+    <!-- sidans innehåll -->
+    <div id="contentBox">
+        <h2>Kontakta mig</h2>
+        <!-- kontaktformulär -->
+        <div id ="contact">
+            <form>
+                <label for="name">Namn:</label><br>
+                <input type="text" name="name" id="name"><br>
+
+                <label for="email">E-post:</label><br>
+                <input type="text" name="email" id="email"><br>
+
+                <label for="message">Meddelande</label><br>
+                <textarea name="message" id="message" required ></textarea>
+                <br>
+                <input type="submit" value="Skicka">
+            </form>
+        </div>
+    </div>
+    <!-- footer med diverse länkar samt kontaktinformation -->
+    <footer>
+        <div id="footerContent">
+            <div id="links">
+                <h4>Länkar</h4>
+                <ul>
+                    <li><a href="index.html">CV</a></li>
+                    <li><a href="projects.html">Projekt</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="https://studenter.miun.se/~jeno2011/writeable/DT173G/Projekt/projektadmin/login.php">Logga in</a></li>
+                </ul>
+            </div>
+            <div id="contactFooter">
+                <h4>Kontaktinfo</h4>
+                <ul>
+                    <li>Gatan 13, Andromeda</li>
+                    <li><a href="#">jeppenorrlander@hotmail.se</a></li>
+                    <li>070 123 45 67</li>
+                </ul>
+            </div>
+        </div>
+        <div id="websiteAuthor">Sida skapad av Jesper Norrlander</div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
