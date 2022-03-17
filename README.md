@@ -16,21 +16,26 @@ Projektet innehåller följande paket:
 Dessa paket valdes för att de använts under tidigare moment och fungerar bra för uppgiften.
 
 Projektet innehåller följande funktioner/metoder
-`// sökvägar
+```
+// sökvägar
 const files = {
     htmlPath: "src/**/*.html",
     sassPath: "src/style/*.scss",
     jsPath: "src/js/*.js",
     imgPath: "src/images/*"
-}`
-`// HTML-task, kopierar filer
+}
+```
+```
+// HTML-task, kopierar filer
 function htmlTask() {
     return src(files.htmlPath)
     .pipe(browserSync.stream())
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(dest('pub'))
-}`
-`// JS-task, konkatenera filer
+}
+```
+```
+// JS-task, konkatenera filer
 function jsTask() {
     return src(files.jsPath)
     .pipe(browserSync.stream())
@@ -39,8 +44,10 @@ function jsTask() {
     .pipe(terser())
     .pipe(sourcemaps.write('../maps'))
     .pipe(dest('pub/js'))
-}`
-`// Sass-task, förvandlar till css, konkatenerar ihop till main.css och komprimerar
+}
+```
+```
+// Sass-task, förvandlar till css, konkatenerar ihop till main.css och komprimerar
 function sassTask() {
     return src(files.sassPath)
     .pipe(browserSync.stream())
@@ -51,14 +58,18 @@ function sassTask() {
     .pipe(cleanCSS())
     .pipe(sourcemaps.write('../maps'))
     .pipe(dest('pub/style'))
-}`
-`// img-task, komprimerar bilder
+}
+```
+```
+// img-task, komprimerar bilder
 function imgTask() {
     return src(files.imgPath)
     .pipe(imagemin())
     .pipe(dest('pub/images'))
-}`
-`// watch
+}
+```
+```
+// watch
 function watchTask() {
     browserSync.init({
         server: {
@@ -66,11 +77,14 @@ function watchTask() {
         }
     });
     watch([files.htmlPath, files.jsPath, files.sassPath, files.imgPath], parallel(htmlTask, jsTask, sassTask, imgTask));
-}`
-`exports.default = series(
+}
+```
+```
+exports.default = series(
     parallel(htmlTask, jsTask, sassTask, imgTask),
     watchTask
-);`
+);
+```
 
 ## För att använda detta repo skriver du följande i din terminal
 För att klona repo
