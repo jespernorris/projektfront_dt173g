@@ -26,6 +26,6 @@ function getProjects() {
        }) 
     })
     .catch(error => {
-        console.log('Error: ', error)
+        console.log('Error: ', error);
     })
 }
